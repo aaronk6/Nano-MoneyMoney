@@ -1,6 +1,6 @@
 # Nano-MoneyMoney
 
-Fetches balances from Nano Blockchain Explorer and returns them as securities
+Fetches balances from nanode.co and returns them as securities
 
 ## Extension Setup
 
