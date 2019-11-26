@@ -35,7 +35,7 @@ local currency = "EUR" -- fixme: Don't hardcode
 local currencyField = "price_eur"
 local marketName = "CoinMarketCap"
 local priceUrl = "https://api.coinmarketcap.com/v1/ticker/nano/?convert=EUR"
-local balanceUrl = "https://www.nanode.co/api/account?id="
+local balanceUrl = "https://api.nanocrawler.cc/v2/accounts/"
 
 local addresses
 local balances
@@ -94,7 +94,7 @@ function queryBalances(addresses)
 
   for key, address in pairs(addresses) do
     res = JSON(connection:request("GET", balanceUrl .. address))
-    table.insert(balances, res:dictionary()["info"]["balance"])
+    table.insert(balances, res:dictionary()["account"]["balance"])
   end
 
   return balances

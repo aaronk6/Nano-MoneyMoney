@@ -1,6 +1,6 @@
 # Nano-MoneyMoney
 
-Fetches balances from nanode.co and returns them as securities
+Fetches balances from nanocrawler.cc and returns them as securities
 
 ## Extension Setup
 
