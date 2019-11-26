@@ -25,7 +25,7 @@
 -- SOFTWARE.
 
 WebBanking{
-  version = 1.00,
+  version = 1.01,
   description = "Fetches balances from nanode.co and returns them as securities",
   services = { "Nano" },
 }
