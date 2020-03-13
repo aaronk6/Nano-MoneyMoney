@@ -1,5 +1,5 @@
 -- Inofficial Nano Extension for MoneyMoney
--- Fetches balances from nanode.co and returns them as securities
+-- Fetches balances from nanocrawler.cc and returns them as securities
 --
 -- Username: xrb_3dbarm2d..., xrb_1xbaafs...
 -- Password: (anything)
@@ -26,7 +26,7 @@
 
 WebBanking{
   version = 1.01,
-  description = "Fetches balances from nanode.co and returns them as securities",
+  description = "Fetches balances from nanocrawler.cc and returns them as securities",
   services = { "Nano" },
 }
 
