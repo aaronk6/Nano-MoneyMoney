@@ -32,9 +32,10 @@ WebBanking{
 
 local currencyName = "Nano"
 local currency = "EUR" -- fixme: Don't hardcode
-local currencyField = "price_eur"
-local marketName = "CoinMarketCap"
-local priceUrl = "https://api.coinmarketcap.com/v1/ticker/nano/?convert=EUR"
+local currencyField = "eur"
+local currencyId = "nano"
+local marketName = "CoinGecko"
+local priceUrl = "https://api.coingecko.com/api/v3/simple/price?ids=" .. currencyId .. "&vs_currencies=" .. currencyField
 local balanceUrl = "https://api.nanocrawler.cc/v2/accounts/"
 
 local addresses
@@ -84,7 +85,7 @@ end
 function queryPrices()
   local connection = Connection()
   local res = JSON(connection:request("GET", priceUrl))
-  return res:dictionary()[1]
+  return res:dictionary()[currencyId]
 end
 
 function queryBalances(addresses)
