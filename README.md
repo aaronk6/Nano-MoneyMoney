@@ -21,3 +21,7 @@ Once downloaded, move `Nano.lua` to your MoneyMoney Extensions folder.
 
 * Always assumes EUR as base currency
 
+## Credits
+
+Powered by [CoinGecko API](https://www.coingecko.com/en/api) and [nanocrawler.cc](https://nanocrawler.cc/)
+
