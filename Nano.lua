@@ -25,7 +25,7 @@
 -- SOFTWARE.
 
 WebBanking{
-  version = 1.01,
+  version = 1.02,
   description = "Fetches balances from nanocrawler.cc and returns them as securities",
   services = { "Nano" },
 }
