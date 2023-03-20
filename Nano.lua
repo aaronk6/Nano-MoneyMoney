@@ -1,5 +1,5 @@
 -- Inofficial Nano Extension for MoneyMoney
--- Fetches balances from nanocrawler.cc and returns them as securities
+-- Fetches balances from mynano.ninja and returns them as securities
 --
 -- Username: xrb_3dbarm2d..., xrb_1xbaafs...
 -- Password: (anything)
@@ -25,8 +25,8 @@
 -- SOFTWARE.
 
 WebBanking{
-  version = 1.02,
-  description = "Fetches balances from nanocrawler.cc and returns them as securities",
+  version = 1.03,
+  description = "Fetches balances from mynano.ninja and returns them as securities",
   services = { "Nano" },
 }
 
@@ -36,7 +36,10 @@ local currencyField = "eur"
 local currencyId = "nano"
 local marketName = "CoinGecko"
 local priceUrl = "https://api.coingecko.com/api/v3/simple/price?ids=" .. currencyId .. "&vs_currencies=" .. currencyField
-local balanceUrl = "https://api.nanocrawler.cc/v2/accounts/"
+local balanceUrl = "https://mynano.ninja/api/node"
+local postContentType = "application/json"
+local jsonObject = {}
+jsonObject["action"] = "account_balance"
 
 local addresses
 local balances
@@ -94,8 +97,11 @@ function queryBalances(addresses)
   local res
 
   for key, address in pairs(addresses) do
-    res = JSON(connection:request("GET", balanceUrl .. address))
-    table.insert(balances, res:dictionary()["account"]["balance"])
+    jsonObject["account"]=address
+    local jsonString = JSON():set(jsonObject):json()
+    
+    res = JSON(connection:request("POST", balanceUrl, jsonString, postContentType))
+    table.insert(balances, res:dictionary()["balance"])
   end
 
   return balances
