@@ -2,7 +2,7 @@
 
 Fetches balances from nanocrawler.cc and returns them as securities.
 
-Requires MoneyMoney version **2.3.25** or greater.
+Requires MoneyMoney version **2.4.27** or greater.
 
 ## Extension Setup
 
