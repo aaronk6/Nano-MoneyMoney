@@ -34,6 +34,8 @@ local currencyId = "nano"
 local marketName = "CoinGecko"
 local priceUrl = "https://api.coingecko.com/api/v3/simple/price?ids=" .. currencyId .. "&vs_currencies=" .. currencyField
 local balanceUrl = "https://mynano.ninja/api/node"
+local apiErrorString = "Failed to get balance from API"
+local apiUnknownError = "Unknown Error"
 local postContentType = "application/json"
 local jsonObject = {}
 jsonObject["action"] = "account_balance"
@@ -98,10 +100,21 @@ function queryBalances(addresses)
     local jsonString = JSON():set(jsonObject):json()
     
     res = JSON(connection:request("POST", balanceUrl, jsonString, postContentType))
+
+    if res:dictionary()["error"] then
+      apiError(res:dictionary()["error"])
+    elseif res:dictionary()["balance"] == nil then
+      apiError(apiUnknownError)
+    end
+
     table.insert(balances, res:dictionary()["balance"])
   end
 
   return balances
+end
+
+function apiError(msg)
+  error(apiErrorString .. " (" .. msg .. ")")
 end
 
 -- from http://lua-users.org/wiki/SplitJoin
