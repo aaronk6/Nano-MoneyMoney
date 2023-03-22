@@ -1,6 +1,6 @@
 # Nano-MoneyMoney
 
-Fetches balances from nanocrawler.cc and returns them as securities.
+Fetches balances from https://mynano.ninja/ and returns them as securities.
 
 Requires MoneyMoney version **2.4.27** or greater.
 
@@ -16,8 +16,7 @@ Once downloaded, move `Nano.lua` to your MoneyMoney Extensions folder.
 ## Account Setup in MoneyMoney
 
 * Add a new account of type “Nano”
-* Enter one or more Nano addresses in the username field (comma-separated)
-* Enter anything in the password field (just don’t leave it blank)
+* Enter one or more Nano addresses (comma-separated)
 
 ## Known Issues and Limitations
 
@@ -25,5 +24,5 @@ Once downloaded, move `Nano.lua` to your MoneyMoney Extensions folder.
 
 ## Credits
 
-Powered by [CoinGecko API](https://www.coingecko.com/en/api) and [nanocrawler.cc](https://nanocrawler.cc/)
+Powered by [CoinGecko API](https://www.coingecko.com/en/api) and [mynano.ninja](https://mynano.ninja/)
 
