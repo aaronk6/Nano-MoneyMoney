@@ -1,10 +1,7 @@
 -- Inofficial Nano Extension for MoneyMoney
 -- Fetches balances from mynano.ninja and returns them as securities
 --
--- Username: xrb_3dbarm2d..., xrb_1xbaafs...
--- Password: (anything)
---
--- Copyright (c) 2020 aaronk6
+-- Copyright (c) 2023 aaronk6, marothe
 --
 -- Permission is hereby granted, free of charge, to any person obtaining a copy
 -- of this software and associated documentation files (the "Software"), to deal
