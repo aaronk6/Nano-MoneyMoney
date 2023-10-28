@@ -33,7 +33,7 @@ local currencyField = "eur"
 local currencyId = "nano"
 local marketName = "CoinGecko"
 local priceUrl = "https://api.coingecko.com/api/v3/simple/price?ids=" .. currencyId .. "&vs_currencies=" .. currencyField
-local balanceUrl = "https://mynano.ninja/api/node"
+local balanceUrl = "https://app.natrium.io/api"
 local apiErrorString = "Failed to get balance from API"
 local apiUnknownError = "Unknown Error"
 local postContentType = "application/json"
